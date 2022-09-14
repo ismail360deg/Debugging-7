@@ -7,7 +7,7 @@ const modalBackground = document.getElementById("modal-background");
 
 // variables
 let userText = "";
-let errorCount = 0;
+let errorCount = [];
 let startTime;
 let questionText = "";
 
@@ -46,6 +46,7 @@ const typeController = (e) => {
     display.innerHTML += `<span class="green">${newLetter === " " ? "▪" : newLetter}</span>`;
   } else {
     display.innerHTML += `<span class="red">${newLetter === " " ? "▪" : newLetter}</span>`;
+    errorCount.push(newLetter);
   }
 
   // check if given question text is equal to user typed text
@@ -91,11 +92,11 @@ const gameOver = () => {
   resultModal.innerHTML += `
     <h1>Finished!</h1>
     <p>You took: <span class="bold">${parseInt(timeTaken)}</span> seconds</p>
-    <p>You made <span class="bold red">${++errorCount}</span> mistakes</p>
+    <p>You made <span class="bold red">${errorCount.length}</span> mistakes</p>
     <button onclick="closeModal()">Close</button>
   `;
 
-  addHistory(questionText, timeTaken, ++errorCount);
+  addHistory(questionText, timeTaken, errorCount.length);
 
   // restart everything
   startTime = null;

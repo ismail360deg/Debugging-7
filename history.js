@@ -71,17 +71,6 @@ function displayHistory() {
    
   </div>
 
-
-
-
-
-
-
-
-    
- 
-    
-  
   `;
 
     histories.appendChild(newRow);
