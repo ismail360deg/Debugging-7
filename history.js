@@ -30,11 +30,63 @@ function displayHistory() {
     newRow.classList.add("card");
 
     newRow.innerHTML = `
-  <h3>${test.questionText}</h3>
-  <p>You took: <span class="bold">${test.timeTaken}</span> seconds</p>
-    <p>You made <span class="bold red">${test.errorCount}</span> mistakes</p>
+
+
+
+    <div class="row row-cols-1 row-cols-lg-3 g-4">
+    
+    <div class="col">
+      <div class="card h-100">
+        
+        <div class="card-body">
+        <h3>${test.questionText}</h3>
+        <p>You took: <span class="bold">${test.timeTaken}</span> seconds</p>
+          <p>You made <span class="bold red">${test.errorCount}</span> mistakes</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="col">
+    <div class="card h-100">
+      
+      <div class="card-body">
+      <h3>${test.questionText}</h3>
+      <p>You took: <span class="bold">${test.timeTaken}</span> seconds</p>
+        <p>You made <span class="bold red">${test.errorCount}</span> mistakes</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="col">
+  <div class="card h-100">
+    
+    <div class="card-body">
+    <h3>${test.questionText}</h3>
+    <p>You took: <span class="bold">${test.timeTaken}</span> seconds</p>
+      <p>You made <span class="bold red">${test.errorCount}</span> mistakes</p>
+    </div>
+  </div>
+</div>
+   
+   
+  </div>
+
+
+
+
+
+
+
+
+    
+ 
+    
+  
   `;
 
     histories.appendChild(newRow);
   });
+
 }
+
+
