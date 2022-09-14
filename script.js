@@ -73,6 +73,16 @@ const gameOver = () => {
   resultModal.innerHTML = "";
   resultModal.classList.toggle("hidden");
   modalBackground.classList.toggle("hidden");
+
+  // add function result modal
+  const centersquare = () => {
+    resultModal.style.marginLeft = window.innerWidth / 2 - resultModal.clientWidth / 2 + 'px';
+    resultModal.style.marginTop = window.innerHeight / 2 - resultModal.clientHeight / 2 + 'px';
+  }
+
+  centersquare();
+  window.addEventListener('resize', centersquare);
+
   // clear user text
   display.innerHTML = "";
   // make it inactive
